@@ -15,7 +15,6 @@ namespace RandomName
         public MainWindow()
         {
             InitializeComponent();
-            List<string> list = new List<string>() { "赵12","钱45","孙13", "李23"};
             selector = new RandomNameSelector();
             selector.Selecting += Selector_Selecting;
             selector.Selected += Selector_Selected;
