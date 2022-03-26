@@ -3,4 +3,4 @@
 
 Runtime: .NET Framework 4.5
 
-![Main](RandomName\Pic\Main.png)
+![Main](\Pic\Main.png)
