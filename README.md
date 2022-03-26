@@ -3,4 +3,6 @@
 
 Runtime: **.NET Framework 4.5**
 
+Release: [下载](https://github.com/HarrisWIlde/RandomName/releases/tag/v0.1-alpha)
+
 ![Main](/Pic/Main.png)
