@@ -87,7 +87,7 @@ namespace RandomName
             
         }
 
-        public async Task StartSelectingWithTime(int times)
+        public async Task StartSelectingWithTime(int times, int interval)
         {
             await Task.Run(() =>
             {
@@ -95,13 +95,16 @@ namespace RandomName
                 int index = 0;
                 for (int i = 0; i < times; i++)
                 {
-                    index = random.Next(0, _Namelist.Count);
-                    if (SelectingNameEventHandler != null)
+                    for (int j = 0; j < interval; j++)
                     {
-                        SelectingNameEventHandler.Invoke(this, new NameEventArgs { Name = _Namelist[index] });
-                        SelectedNameEventHandler.Invoke(this, new NameEventArgs { Name = _Namelist[index] });
+                        index = random.Next(0, _Namelist.Count);
+                        if (SelectingNameEventHandler != null)
+                        {
+                            SelectingNameEventHandler.Invoke(this, new NameEventArgs { Name = _Namelist[index] });
+                        }
+                        Thread.Sleep(50);
                     }
-                    Thread.Sleep(100);
+                    SelectedNameEventHandler.Invoke(this, new NameEventArgs { Name = _Namelist[index] });
                 }
             });
 

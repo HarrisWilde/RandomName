@@ -63,7 +63,7 @@ namespace RandomName
                         TextBoxPeopleNum.Text = $"{selector._Namelist.Count}";
                     }
                     this.ButtonStart.IsEnabled = false;
-                    await selector.StartSelectingWithTime(int.Parse(this.TextBoxPeopleNum.Text));
+                    await selector.StartSelectingWithTime(int.Parse(this.TextBoxPeopleNum.Text), int.Parse(this.TextBoxIntervalNum.Text));
                     this.ButtonStart.IsEnabled = true;
                 } else
                 {
@@ -100,6 +100,19 @@ namespace RandomName
             {
                 TextBoxPeopleNum.Text = $"{int.Parse(TextBoxPeopleNum.Text) - 1}";
             }
+        }
+
+        private void RButtonIntervalSub_Click(object sender, RoutedEventArgs e)
+        {
+            if (int.Parse(TextBoxIntervalNum.Text) > 1)
+            {
+                TextBoxIntervalNum.Text = $"{int.Parse(TextBoxIntervalNum.Text) - 1}";
+            }
+        }
+
+        private void RButtonIntervalAdd_Click(object sender, RoutedEventArgs e)
+        {
+            TextBoxIntervalNum.Text = $"{int.Parse(TextBoxIntervalNum.Text) + 1}";
         }
 
         private void ButtonCopy_Click(object sender, RoutedEventArgs e)

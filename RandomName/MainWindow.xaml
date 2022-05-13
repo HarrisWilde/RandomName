@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:RandomName"
         mc:Ignorable="d"
         Background="Transparent"
-        Title="MainWindow" Height="450" Width="500" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True">
+        Title="MainWindow" Height="480" Width="500" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True">
     <Grid>
         <Border Margin="20,20,20,30" Background="Transparent">
             <Border.Effect>
@@ -23,7 +23,7 @@
                     <ColumnDefinition Width="160"/>
                 </Grid.ColumnDefinitions>
                 <Grid.Clip>
-                    <RectangleGeometry Rect="0,0,460,400" RadiusX="10" RadiusY="10"/>
+                    <RectangleGeometry Rect="0,0,460,430" RadiusX="10" RadiusY="10"/>
                 </Grid.Clip>
                 <Border Grid.RowSpan="3" Grid.Column="1" Background="#fdfdfd" HorizontalAlignment="Right" Width="160">
                     <Border.Effect>
@@ -67,6 +67,19 @@
                                     <Line X1="0" Y1="0" X2="10" Y2="0" Stroke="White"/>
                                 </RepeatButton>
                                 <RepeatButton x:Name="RButtonNumAdd" Style="{DynamicResource RepeatButtonStyleForAddSub}" Width="20" BorderBrush="{x:Null}" Background="#FF6B75C7" Foreground="White" Padding="0" Click="RButtonNumAdd_Click">
+                                    <Grid>
+                                        <Line X1="0" Y1="5" X2="10" Y2="5" Stroke="White"/>
+                                        <Line X1="5" Y1="0" X2="5" Y2="10" Stroke="White"/>
+                                    </Grid>
+                                </RepeatButton>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Height="20" Margin="0,0,0,5">
+                                <TextBlock Text="间隔人数：" VerticalAlignment="Center"/>
+                                <TextBox x:Name="TextBoxIntervalNum" Style="{DynamicResource TextBoxStyleForCommen}" Width="28" BorderBrush="{x:Null}" Text="5" Focusable="False" HorizontalContentAlignment="Right" VerticalContentAlignment="Bottom" Padding="1"/>
+                                <RepeatButton x:Name="RButtonIntervalSub" Style="{DynamicResource RepeatButtonStyleForAddSub}" Width="20" BorderBrush="{x:Null}" Background="#FF6B75C7" Foreground="White" Padding="0" Click="RButtonIntervalSub_Click">
+                                    <Line X1="0" Y1="0" X2="10" Y2="0" Stroke="White"/>
+                                </RepeatButton>
+                                <RepeatButton x:Name="RButtonIntervalAdd" Style="{DynamicResource RepeatButtonStyleForAddSub}" Width="20" BorderBrush="{x:Null}" Background="#FF6B75C7" Foreground="White" Padding="0" Click="RButtonIntervalAdd_Click">
                                     <Grid>
                                         <Line X1="0" Y1="5" X2="10" Y2="5" Stroke="White"/>
                                         <Line X1="5" Y1="0" X2="5" Y2="10" Stroke="White"/>
